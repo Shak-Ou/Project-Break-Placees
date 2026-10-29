@@ -1,0 +1,90 @@
+/*h1 style for each page*/
+h1{
+    font-family: 'poppins', sans-serif;
+    font-size: 100px;
+    font-style: Bold;
+    color: #000000;
+
+    margin: 25px; 
+
+}
+/*Design of the div 1*/
+.box{
+    background-color: #FEF5DB;
+    border-radius: 120px;
+    padding: 16px;
+
+    margin: 20px;
+
+    width: 869px;
+    height: 688px;
+
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+    
+
+}
+
+/*Image size, radius and orientation*/
+img{
+    border-radius: 120px;
+    width: 405px;
+    height: 614px;
+
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    text-align: justify; 
+    padding: 20px;
+
+
+}
+/*Paragraph style of the description of the locations*/
+p{
+    font-family: 'Poppins', sans-serif;
+    font-style: thin;
+    font-size: 28px;
+    color: #000000;
+
+}
+
+/*Affluence Indication right below the div 1*/
+h3{
+    font-family: 'Poppins', sans-serif;
+    font-style: Bold;
+    font-size: 40px;
+    color: #000000;
+
+    margin: 25px;
+
+}
+
+/*Design of the Areas Text in the Middle of the page*/
+h2{
+    font-family: 'Poppins', sans-serif;
+    font-style: Bold;
+    font-size: 60px;
+    color: #224B29;
+
+    Display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+/* Design of the floor bottons on the left of the page(s)*/
+.floor.container{
+    color:#FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    gap: 20px;
+
+}
+
