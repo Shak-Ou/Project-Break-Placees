@@ -1,36 +1,45 @@
+body{
+    background-color: #FFFFFF;
+    margin: 0px;
+    padding: 0px;
+}
+
+#title{
+    margin-top: 90px;
+
+}
+
 /*h1 style for each page*/
 h1{
     font-family: 'poppins', sans-serif;
-    font-size: 100px;
-    font-style: Bold;
+    font-size: 85px;
+    font-weight: 620;
     color: #000000;
 
-    margin: 25px; 
+    margin: 30px; 
+    letter-spacing: 5px;
 
 }
 /*Design of the div 1*/
 .box{
     background-color: #FEF5DB;
-    border-radius: 120px;
+    border-radius: 76px;
+
+    box-sizing: border-box;
     padding: 16px;
-
     margin: 20px;
-
-    width: 869px;
-    height: 688px;
 
     display: flex; 
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 20px; 
     
 
 }
 
 /*Image size, radius and orientation*/
 img{
-    border-radius: 120px;
+    border-radius: 60px;
     width: 405px;
     height: 614px;
 
@@ -40,36 +49,72 @@ img{
     display: flex;
     flex-direction: column;
     text-align: justify; 
-    padding: 20px;
+
+    padding: 25px;
 
 
 }
 /*Paragraph style of the description of the locations*/
 p{
     font-family: 'Poppins', sans-serif;
-    font-style: thin;
-    font-size: 28px;
+    font-weight: 300;
+    font-size: 23px;
     color: #000000;
 
 }
+/*Creation of a div before the text "Affluence", to increase the margin with the first box*/
+#affluence{
+    Margin: 25px;
+
+    Display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:  25px;
+}
+
+.dots{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+/*One grey dot by default*/
+.dot{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+}
+
+/*Green dot when the place is busy*/
+.dot.full{
+    background-color: #94BC7E;
+}
+
 
 /*Affluence Indication right below the div 1*/
 h3{
     font-family: 'Poppins', sans-serif;
-    font-style: Bold;
+    font-weight: 700;
     font-size: 40px;
     color: #000000;
 
-    margin: 25px;
+    letter-spacing: 8px;
 
+}
+
+.place {
+  shape-outside: circle(50%) margin-box;
 }
 
 /*Design of the Areas Text in the Middle of the page*/
 h2{
     font-family: 'Poppins', sans-serif;
-    font-style: Bold;
+    font-weight: 650;
     font-size: 60px;
     color: #224B29;
+
+    letter-spacing: 10px;
 
     Display: flex;
     flex-direction: row;
@@ -77,14 +122,136 @@ h2{
 
 }
 
-/* Design of the floor bottons on the left of the page(s)*/
-.floor.container{
-    color:#FFFFFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    gap: 20px;
+/* floors and library-map are contain in this div in order to place them side by side*/
+#Interaction{
+    /*Placement of the floors div on the left side of the page*/
+    display: flex; 
+    flex-direction: row;
+    align-items: flex-start;
+
+    gap: 60px;
+    margin-left: 15px;
 
 }
+
+/*Creation of the floors div and the floor bottons*/
+/*First creation of a Bigger div called floors that will contain the different Floor*/
+.floors{
+    display: flex; 
+    flex-direction: column;
+    /* justify-content: left;
+    align-items: center; */
+
+    gap: 10px;
+    margin-left: 30px;
+}
+
+/*Design of the different floors buttons with <p>, making them smooth*/
+.Floor{
+    Background-color:#FFFFFF;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: #224B29;
+
+
+    /*Center the number and the text*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+/*Font weight depending of the floor selected on the app*/
+.Floor .gras{
+    font-weight: 700;
+}
+.Floor .light{
+    color: rgb(34 75 41 / 40%);
+    font-weight: 400;
+    font-size: 42px;
+}
+
+
+#library-map{
+    /* Propriétés dark shadow */
+    border: 2px solid #000000;
+
+    width: 100%;
+    height: 680px;
+
+    border-radius: 50px;
+}
+
+/*One place on the map, drawn as a triangle*/
+.place{
+    position: absolute;
+    width: 52px;
+    height: 45px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.place.free{
+    background-color: #94BC7E;
+}
+
+.place.busy{
+    background-color: #C97B7B;
+}
+
+/*Walls of the floor*/
+.wall{
+    position: absolute;
+    background-color: #000000;
+}
+
+.wall.horizontal{
+    height: 2px;
+}
+
+.wall.vertical{
+    width: 2px;
+}
+
+/*Proprieties of a div that will contain the menu and the bookmark icons, to place the menu bar in the center of the page*/
+#menu{
+
+    margin: 50px;
+    margin-top: 0px;
+
+    Display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.icon{
+    width: 65px;
+    height: 65px;
+
+    color: #224B29;
+    stroke-width: 1.2px;
+
+}
+
+/*Bar menu design with a white background and a little transparencyx*/
+#Bmenu{
+    Background-color: rgb(255 255 255 / 70%);
+
+    width: 100%;
+    
+    border-radius: 120px;
+    padding: 60px;
+
+    box-shadow: 0px 8px 24px rgb(0 0 0 / 25%);
+
+    Display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 85px;
+
+}
+
 
