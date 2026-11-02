@@ -175,13 +175,190 @@ h2{
 
 
 #library-map{
-    /* Propriétés dark shadow */
-    border: 2px solid #000000;
+    /* Border of the map (Figma: 3px dark green, radius 50px) */
+    border: 3px solid #224B29;
 
     width: 100%;
     height: 680px;
 
     border-radius: 50px;
+
+    /*The lines and triangles are placed inside the map*/
+    position: relative;
+    overflow: hidden;
+
+    /*Smooth change of size for the state Direction*/
+    transition: height 0.6s;
+}
+
+/*Walls of the map: black lines (Figma: 3px)*/
+.wall{
+    position: absolute;
+    background-color: #000000;
+}
+
+.wall.horizontal{
+    left: 0%;
+    top: 44.5%;
+    width: 34.3%;
+    height: 3px;
+}
+
+.wall.vertical{
+    left: 38.7%;
+    top: 61%;
+    bottom: 0%;
+    width: 3px;
+}
+
+/*A place is a triangle, made with clip-path (Figma: 45px x 50px)*/
+.place{
+    position: absolute;
+    width: 45px;
+    height: 50px;
+
+    border: none;
+    padding: 0px;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+
+    /*Smooth change of size and colour*/
+    transition: width 0.6s, height 0.6s, background-color 0.4s;
+}
+
+/*Green triangle = free place, the user can click on it*/
+.place.free{
+    background-color: rgb(148 188 126 / 78%);
+    cursor: pointer;
+}
+
+/*Red triangle = busy place*/
+.place.busy{
+    background-color: rgb(195 93 93 / 78%);
+}
+
+/*Darker green when the triangle is selected (Figma: #224B29)*/
+.place.free.selected{
+    background-color: #224B29;
+}
+
+/*Position of each triangle on the map (in % so it follows the size of the map)*/
+.p1{ left: 9.4%;  top: 5.2%; }
+.p2{ left: 9.4%;  top: 23.6%; }
+.p3{ left: 77.2%; top: 5.2%; }
+.p4{ left: 49.2%; top: 38.4%; }
+.p5{ left: 9.4%;  top: 53%; }
+.p6{ left: 9.4%;  top: 73%; }
+.p7{ left: 49.2%; top: 73.4%; }
+
+/*State Direction: class added on the body in JS*/
+/*The title Areas and the floors disappear*/
+h2{
+    overflow: hidden;
+    max-height: 200px;
+    transition: opacity 0.4s, max-height 0.6s, margin 0.6s;
+}
+
+.floors{
+    overflow: hidden;
+    max-width: 400px;
+    transition: opacity 0.4s, max-width 0.6s, margin 0.6s;
+}
+
+body.direction h2{
+    opacity: 0;
+    max-height: 0px;
+    margin: 0px;
+}
+
+body.direction .floors{
+    opacity: 0;
+    max-width: 0px;
+    margin-left: 0px;
+}
+
+/*The map takes all the space and gets bigger (Figma: from 610px to 955px high)*/
+#Interaction{
+    transition: gap 0.6s;
+}
+
+body.direction #Interaction{
+    gap: 0px;
+}
+
+body.direction #library-map{
+    height: 955px;
+}
+
+/*The triangles get bigger too (Figma: 70px x 78px)*/
+body.direction .place{
+    width: 70px;
+    height: 78px;
+}
+
+/*Black line between the selected triangle and the buttons (Figma: 114px x 5px)*/
+#direction-line{
+    position: absolute;
+    width: 0px;
+    height: 5px;
+    background-color: #000000;
+
+    transition: width 0.4s;
+}
+
+/*The line is drawn from 0 to 114px*/
+#direction-line.show{
+    width: 114px;
+}
+
+/*Box of the 2 buttons Reserve and Get Direction, hidden by default*/
+#direction-buttons{
+    position: absolute;
+
+    Display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+
+    pointer-events: none;
+}
+
+/*Dark green round buttons (Figma: 75px high, radius 100px)*/
+#direction-buttons .button{
+    background-color: #224B29;
+    border: none;
+    border-radius: 100px;
+
+    width: 298px;
+    height: 75px;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #FFFFFF;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    /*Hidden at the start: transparent and a bit lower*/
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s, transform 0.4s;
+}
+
+/*The second button appears just after the first one*/
+#direction-buttons .button:nth-child(2){
+    width: 380px;
+    transition-delay: 0.15s;
+}
+
+/*Class added in JS: the buttons appear*/
+#direction-buttons.show{
+    pointer-events: auto;
+}
+
+#direction-buttons.show .button{
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 /*Proprieties of a div that will contain the menu and the bookmark icons, to place the menu bar in the center of the page*/

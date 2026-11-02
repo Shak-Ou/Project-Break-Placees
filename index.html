@@ -65,7 +65,30 @@
 
     </div>
 
-    <div id ="library-map"></div>
+    <!--Map of the floor (Figma: librairy map)-->
+    <div id ="library-map">
+
+        <!--Walls of the map: 2 black lines-->
+        <span class="wall horizontal"></span>
+        <span class="wall vertical"></span>
+
+        <!--Places: green triangles are free (clickable), red triangles are busy-->
+        <button class="place free p1" aria-label="Free place 1"></button>
+        <button class="place free p2" aria-label="Free place 2"></button>
+        <button class="place free p3" aria-label="Free place 3"></button>
+        <span class="place busy p4"></span>
+        <span class="place busy p5"></span>
+        <span class="place busy p6"></span>
+        <span class="place busy p7"></span>
+
+        <!--State Direction: line and buttons shown in JS after a click on a green triangle-->
+        <span id="direction-line"></span>
+        <div id="direction-buttons">
+            <button class="button"> Reserve </button>
+            <button class="button"> Get Direction </button>
+        </div>
+
+    </div>
 </div>
 
 
@@ -87,6 +110,9 @@
     </script>
 
 </div>
+
+<!--Script for the click on the triangles of the map (state Direction)-->
+<script src="script.js"></script>
 
 </body>
 </html>

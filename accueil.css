@@ -1,0 +1,277 @@
+body{
+    background-color: #FFFFFF;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Cream box at the top, only the bottom corners are rounded (Figma: 869px wide, radius 120px)*/
+#favorite{
+    background-color: #FEF5DB;
+    border-radius: 0px 0px 120px 120px;
+
+    box-sizing: border-box;
+    max-width: 869px;
+    margin: 0px 27px;
+    padding: 155px 24px 64px 31px;
+}
+
+/*Title "Your Favorite"*/
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 100px;
+    font-weight: 900;
+    color: #000000;
+
+    margin: 0px 0px 37px 22px;
+    letter-spacing: 2px;
+
+    /*Needed to put the green line behind the text*/
+    position: relative;
+    isolation: isolate;
+}
+
+/*Green line behind the title (Figma: 633px x 25px)*/
+h1::after{
+    content: "";
+    position: absolute;
+    left: 37px;
+    top: 93px;
+    z-index: -1;
+
+    width: 633px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: rgb(148 188 126 / 78%);
+}
+
+/*Text on the left, image on the right*/
+.box{
+    Display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.text{
+    width: 416px;
+}
+
+/*Small bold titles (name of the place, Affluence, categories)*/
+h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #000000;
+
+    margin: 0px;
+    letter-spacing: 2.8px;
+}
+
+/*Paragraph style of the description*/
+p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    color: #000000;
+
+    margin: 10px 0px 0px 0px;
+    letter-spacing: 2.8px;
+    word-break: break-word;
+}
+
+/*Image of the favorite place (Figma: 340px x 355px)*/
+.favorite-image{
+    width: 340px;
+    height: 355px;
+    border-radius: 120px;
+    object-fit: cover;
+    margin-top: 17px;
+}
+
+/*Affluence text and dots on the same line*/
+#affluence{
+    margin-top: 20px;
+
+    Display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+}
+
+.dots{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+/*One grey dot by default*/
+.dot{
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: #CCCCCC;
+}
+
+/*Green dot when the place is busy*/
+.dot.full{
+    background-color: rgb(148 188 126 / 78%);
+}
+
+/*Dark green round button (Figma: 298px x 75px)*/
+.button{
+    background-color: #224B29;
+    border: none;
+    border-radius: 100px;
+
+    width: 298px;
+    height: 75px;
+    margin-top: 30px;
+    margin-left: 26px;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #FFFFFF;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+}
+
+/*Row of the 3 categories*/
+#categories{
+    margin: 66px 0px 0px 54px;
+
+    Display: flex;
+    flex-direction: row;
+    gap: 45px;
+}
+
+/*One category: white tile + name below*/
+.category{
+    Display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.category h3{
+    color: #224B29;
+}
+
+/*White tile with a shadow (Figma: 144px x 130px, radius 40px)*/
+.tile{
+    background-color: #FFFFFF;
+    width: 144px;
+    height: 130px;
+    border-radius: 40px;
+    box-shadow: 0px 10px 8px rgb(0 0 0 / 25%), 10px 6px 6px rgb(0 0 0 / 25%);
+
+    Display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Titles of the sections "Near you" and "Hotspots"*/
+h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #224B29;
+
+    margin: 25px 0px 0px 63px;
+    letter-spacing: 2.8px;
+
+    Display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/*Row of cards, the user can scroll it from left to right*/
+.cards{
+    padding: 17px 59px;
+
+    Display: flex;
+    flex-direction: row;
+    gap: 45px;
+    overflow-x: auto;
+}
+
+/*One card: image + name and heart below. Also used for the link*/
+.card{
+    flex-shrink: 0;
+    width: 223px;
+
+    text-decoration: none;
+    color: #000000;
+}
+
+/*Image of the card (Figma: 223px x 262px, radius 40px)*/
+.card > img{
+    display: block;
+    width: 223px;
+    height: 262px;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+/*Name of the place on the left, heart on the right*/
+.name{
+    margin-top: 8px;
+
+    Display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 0.5px;
+}
+
+/*The card with a link grows a little when the mouse is on it*/
+a.card:hover > img{
+    transform: scale(1.03);
+    transition: transform 0.2s;
+}
+
+/*Menu bar: same design as index.html*/
+#menu{
+
+    margin: 50px;
+    margin-top: 30px;
+
+    Display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.icon{
+    width: 65px;
+    height: 65px;
+
+    color: #224B29;
+    stroke-width: 1.2px;
+
+}
+
+/*Bar menu design with a white background and a little transparency*/
+#Bmenu{
+    Background-color: rgb(255 255 255 / 70%);
+
+    width: 100%;
+
+    border-radius: 120px;
+    padding: 60px;
+
+    box-shadow: 0px 8px 24px rgb(0 0 0 / 25%);
+
+    Display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 85px;
+
+}

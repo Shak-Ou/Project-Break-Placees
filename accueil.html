@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+    <link href="accueil.css" rel ="stylesheet">
+
+</head>
+<body>
+
+<!--Code of the accueil page-->
+<!--Cream box at the top of the page with the favorite place-->
+<div id="favorite">
+
+    <!--Title of the page, with a green line behind it-->
+    <h1> Your Favorite </h1>
+
+    <!--Text on the left and image on the right-->
+    <div class="box">
+        <div class="text">
+            <h3> Librairy Part-Dieu </h3>
+            <p> Bcjebcjhrbvhjr’bvjhbjh’vjbvhzbvhkcbhqbczkbchbjhvcjhzvhtvjbcjhrtzvhhvh </p>
+
+            <!--5 dots to show how busy the place is (here 3 out of 5)-->
+            <div id="affluence">
+                <h3> Affluence: </h3>
+                <div class="dots" role="img" aria-label="Affluence 3 sur 5">
+                    <span class="dot full"></span>
+                    <span class="dot full"></span>
+                    <span class="dot full"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <!--Green button to reserve a spot-->
+            <button class="button"> Reserve </button>
+        </div>
+
+        <!--Image of the favorite place-->
+        <img class="favorite-image"
+            src = "Assets/NYC.jpeg"
+            alt = "image of librairy Part-Dieu">
+    </div>
+</div>
+
+<!--3 categories: Librairy, Coffee, Cowork-->
+<div id="categories">
+    <div class="category">
+        <div class="tile"><img src="Assets/icons/library.svg" alt=""></div>
+        <h3> Librairy </h3>
+    </div>
+    <div class="category">
+        <div class="tile"><img src="Assets/icons/cafe.svg" alt=""></div>
+        <h3> Coffee </h3>
+    </div>
+    <div class="category">
+        <div class="tile"><img src="Assets/icons/cowork.svg" alt=""></div>
+        <h3> Cowork </h3>
+    </div>
+</div>
+
+<!--Section Near you-->
+<h2> Near you <img src="Assets/icons/navigation.svg" alt=""></h2>
+
+<!--Cards of the places near the user (scroll from left to right)-->
+<div class="cards">
+
+    <!--First card: link to the Part-Dieu page (index.html)-->
+    <a class="card" href="index.html">
+        <img src="Assets/Librairy%20%231.jpeg" alt="image of librairy 1">
+        <div class="name"><span> Librairy 1 </span><img src="Assets/icons/heart-full.svg" alt="favorite"></div>
+    </a>
+
+    <div class="card">
+        <img src="Assets/NYC.jpeg" alt="image of librairy 2">
+        <div class="name"><span> Librairy 2 </span><img src="Assets/icons/heart.svg" alt=""></div>
+    </div>
+
+    <div class="card">
+        <img src="Assets/makers%20Lab.jpeg" alt="image of librairy 3">
+        <div class="name"><span> Librairy 3 </span><img src="Assets/icons/heart.svg" alt=""></div>
+    </div>
+
+    <div class="card">
+        <img src="Assets/Maker's%20lab%20.jpeg" alt="image of librairy 3">
+        <div class="name"><span> Librairy 3 </span><img src="Assets/icons/heart.svg" alt=""></div>
+    </div>
+
+</div>
+
+<!--Section Hotspots-->
+<h2> Hotspots </h2>
+
+<!--Cards of the most popular places-->
+<div class="cards">
+
+    <div class="card">
+        <img src="Assets/Maker's%20lab%20.jpeg" alt="image of librairy 1">
+        <div class="name"><span> Librairy 1 </span><img src="Assets/icons/heart-full.svg" alt="favorite"></div>
+    </div>
+
+    <div class="card">
+        <img src="Assets/Librairy%20%231.jpeg" alt="image of librairy 2">
+        <div class="name"><span> Librairy 2 </span><img src="Assets/icons/heart.svg" alt=""></div>
+    </div>
+
+    <div class="card">
+        <img src="Assets/NYC.jpeg" alt="image of librairy 3">
+        <div class="name"><span> Librairy 3 </span><img src="Assets/icons/heart.svg" alt=""></div>
+    </div>
+
+    <div class="card">
+        <img src="Assets/makers%20Lab.jpeg" alt="image of librairy 3">
+        <div class="name"><span> Librairy 3 </span><img src="Assets/icons/heart.svg" alt=""></div>
+    </div>
+
+</div>
+
+<!--Menu bar, same as index.html-->
+<div id="menu">
+    <div id ="Bmenu">
+
+        <i class="icon" data-lucide="menu"></i>
+        <i class="icon" data-lucide="bookmark"></i>
+        <i class="icon" data-lucide="map-pin"></i>
+        <i class="icon" data-lucide="messages-circle"></i>
+        <i class="icon" data-lucide="user-round"></i>
+
+    </div>
+
+    <!-- Loading the Lucide icons library (same as index.html) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</div>
+
+</body>
+</html>
