@@ -184,36 +184,6 @@ h2{
     border-radius: 50px;
 }
 
-/*One place on the map, drawn as a triangle*/
-.place{
-    position: absolute;
-    width: 52px;
-    height: 45px;
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
-
-.place.free{
-    background-color: #94BC7E;
-}
-
-.place.busy{
-    background-color: #C97B7B;
-}
-
-/*Walls of the floor*/
-.wall{
-    position: absolute;
-    background-color: #000000;
-}
-
-.wall.horizontal{
-    height: 2px;
-}
-
-.wall.vertical{
-    width: 2px;
-}
-
 /*Proprieties of a div that will contain the menu and the bookmark icons, to place the menu bar in the center of the page*/
 #menu{
 
