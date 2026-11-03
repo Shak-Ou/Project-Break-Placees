@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BREAK</title>
+
+    <!-- Loading of the font Poppins font the page -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,200&display=swap" rel="stylesheet">
+    
+    <!-- Loading of the CSS file -->
+    <link href="presentation.css" rel ="stylesheet">
+
+</head>
+<body>
+
+<!--Code of the intro page - Page Présentation-->
+<!--Box for the title, placed in the middle of the page-->
+<div id="title">
+    <!--Title of the app, animated in CSS-->
+    <h1> BREAK </h1>
+</div>
+
+<!--Coffee cup on the right side of the page, with the steam above it (Claude help)-->
+<!--                 Visible zone of the SVG                   Link of the SVG -->
+<!--                           I                                         I-->
+<!--                           I                                         I-->
+<!--                           V                                         V-->
+<svg id="cup" viewBox="0 -150 590 740" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <!--Animation 3 black curved lines, animated in CSS (Claude help)-->
+    <!--                Drawing of the 3 animated lines above the cup (Claude help)-->
+<!--                                              I                     -->
+<!--                                              I                     -->
+<!--                                              V                     -->
+    <path class="steam" d="M150 60 C130 30 170 0 150 -30 C130 -60 170 -90 150 -120" />
+    <path class="steam" d="M190 60 C170 30 210 0 190 -30 C170 -60 210 -90 190 -120" />
+    <path class="steam" d="M230 60 C210 30 250 0 230 -30 C210 -60 250 -90 230 -120" />
+
+    <!--Cup and saucer drawings -->
+<!--                Drawing of the 3 animated lines above the cup (Claude help)-->
+<!--                                              I                     -->
+<!--                                              I                     -->
+<!--                                              I                     -->
+<!--                                              V                     -->
+
+    <path class="cup-line" d="M110.608 92.1863H424.046V313.436C424.046 325.543 421.661 337.53 417.028 348.715C412.395 359.9 405.605 370.062 397.044 378.623C388.484 387.183 378.321 393.974 367.137 398.606C355.952 403.239 343.964 405.624 331.858 405.624H202.796C178.346 405.624 154.898 395.911 137.609 378.623C120.321 361.334 110.608 337.886 110.608 313.436V92.1863Z"/>
+    <path class="cup-line" d="M73.7435 479.378H460.931"/>
+</svg>
+
+<!--Bottom of the page: small line and slogan-->
+<div id="slogan">
+    <div class="line"></div>
+    <p> Use it Well </p>
+</div>
+
+<!--Script that sends the user to the accueil page after 3.5 seconds-->
+<script src="presentation.js"></script>
+
+</body>
+</html>

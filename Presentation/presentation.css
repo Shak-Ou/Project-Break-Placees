@@ -1,0 +1,145 @@
+/*Cream background of the intro page, full screen height*/
+body{
+    background-color: #FEF5DB;
+    margin: 0px;
+    padding: 0px;
+    /*Full screen height, to center the title and the cup*/
+    min-height: 100vh;
+    /*To hide what is outside of the screen*/
+    overflow: hidden;
+
+    /*Fade out of the page before going to the accueil page*/
+    transition: opacity 0.5s;
+}
+
+/*Class added just before the redirection*/
+body.fade-out{
+    opacity: 0;
+}
+
+/*Box of the title, takes all the screen to center BREAK*/
+#title{
+    height: 100vh;
+
+    Display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Style of the BREAK title*/
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 150px;
+    font-weight: 700;
+    color: #000000;
+
+    margin: 0px;
+    letter-spacing: 3px;
+
+    /*Light animation: the title appears and the letters get closer (Claude help)*/
+    animation: title-in 1.4s ease-out;
+}
+
+/*Keyframes of the title animation (Claude help)*/
+@keyframes title-in{
+    from{
+        opacity: 0;
+        letter-spacing: 25px;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        letter-spacing: 3px;
+        transform: translateY(0px);
+    }
+}
+
+/*Coffee cup on the side, partly outside of the screen*/
+#cup{
+    /*Exact position of the cup*/
+    position: absolute;
+
+    right: -339px;
+    top: calc(50% - 150px);
+
+    width: 590px;
+    height: 740px;
+}
+
+/*Lines of the cup and the saucer*/
+.cup-line{
+    stroke: #000000;
+    stroke-width: 7px;
+
+    /*Round ends of the line, visible on the saucer*/
+    stroke-linecap: round;
+    /*Round corners where two lines meet*/
+    stroke-linejoin: round;
+}
+
+
+/*Animation lines: thin black curves*/
+.steam{
+    stroke: #000000;
+    stroke-width: 6px;
+    stroke-linecap: round;
+
+    opacity: 0;
+
+    /*Soft animation that loops forever*/
+    animation: steam 2.4s ease-in-out infinite;
+}
+
+/*Each steam line starts a bit later than the previous one*/
+.steam:nth-child(2){
+    animation-delay: 0.6s;
+}
+.steam:nth-child(3){
+    animation-delay: 1.2s;
+}
+
+/*Keyframes of the steam: it goes up, moves a little and disappears (Claude help)*/
+@keyframes steam{
+    0%{
+        opacity: 0;
+        transform: translate(0px, 30px);
+    }
+    40%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translate(8px, -40px);
+    }
+}
+
+/*Bottom part with the line and the slogan*/
+#slogan{
+    position: absolute;
+    bottom: 135px;
+    width: 100%;
+
+    Display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Small black line above the slogan*/
+.line{
+    width: 216px;
+    height: 3px;
+    background-color: #000000;
+}
+
+/*Slogan Design*/
+p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    font-size: 55px;
+    color: #000000;
+
+    margin: 25px;
+    letter-spacing: 5.5px;
+}

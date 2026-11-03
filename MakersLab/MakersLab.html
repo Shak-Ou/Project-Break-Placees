@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makers</title>
+
+<!--Loading the poppins font, Tried to load the satoshi font but it was not working, so we used poppins for all the project-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700;900&display=swap" rel="stylesheet">
+
+    <link href="style.css" rel ="stylesheet">
+
+</head>
+<body>
+
+<!--Code of unique page - Librairy #1-->
+<!-- A box for the Title to increase the margin with the top of the page-->
+<div id = "title">
+    <!--Title of the page-->
+    <h1> Maker's Lab </h1>
+</div>
+
+<!--Entry box - Informations of the page and image-->
+<div class ="box">
+
+ <!--Image for the maker's Lab location, in the future will be apply to all the pages-->
+    <img 
+        src = "Assets/NYC.jpeg"
+        alt = "image of librairy #1">
+    <!--Description of the maker's Lab location, in the future will be apply to all the pages-->
+    <div class = "text">
+        <p> Emlyon's Makers'Lab is a space for creativity and experimentation where students can turn ideas into tangible projects. It offers tools and equipment to design, build and test prototypes while exploring new techniques.</p>
+
+        <p>Designed for collaboration, the space encourages hands-on learning and the sharing of skills. Students can work independently or in teams, exchange ideas with fellow makers, and bring creative, entrepreneurial or technology projects to life.</p>
+    </div>
+
+</div>
+
+<!--Div for the affluence information, and the 5 level of availability-->
+<div id="affluence">
+    <h3> Affluence : </h3>
+
+   <!--5 dots to show how busy the place is (here 3 out of 5)-->
+    <div class="dots"  role="img" aria-label="Affluence 3 sur 5">
+        <span class="dot full"></span>
+        <span class="dot full"></span>
+        <span class="dot full"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+</div>
+
+<h2> Areas </h2>
+
+<!--Div to choose the floors if needed, depending on the location-->
+<div id="Interaction">
+
+      <!--Card for one floor-->
+    <div class = "floors">
+
+        <p class = "Floor"><span class="light">1</span><span class="light">Floor</span></p>
+        <p class = "Floor"><span class="gras">2</span><span class="gras">Floor</span></p>
+        <p class = "Floor"><span class="light">3</span><span class="light">Floor</span></p>
+
+    </div>
+
+    <!--Map of the floor, based on my figma design (Claude help)-->
+    <div id ="library-map">
+
+        <!--Walls of the map: 2 black lines-->
+        <span class="wall horizontal"></span>
+        <span class="wall vertical"></span>
+
+        <!--Places: green triangles are free (clickable), red triangles are busy + arai-label pour les personnes mal voyante-->
+        <button class="place free p1" id="sensorplace"></button>
+
+        <button class="place free p2"></button>
+        <button class="place free p3"></button>
+        <span class="place busy p4"></span>
+        <span class="place busy p5"></span>
+        <span class="place busy p6"></span>
+        <span class="place busy p7"></span>
+
+        <!--For the future animation, line and buttons shown in JS after a click on a green triangle-->
+        <span id="direction-line"></span>
+        <div id="direction-buttons">
+            <button class="button"> Reserve </button>
+            <button class="button"> Get Direction </button>
+        </div>
+
+    </div>
+</div>
+
+<!--Div to create the menu bar, with the 5 different icons-->
+<div id="menu">
+    <div id ="Bmenu">
+        <!--Icons from the Lucide library, to be used in the menu bar-->
+        <!--Link to the main page-->
+        <a href="../Accueil/accueil.html"><i class="icon" data-lucide="menu"></i></a>
+        <i class="icon" data-lucide="bookmark"></i>
+        <i class="icon" data-lucide="map-pin"></i>
+        <i class="icon" data-lucide="messages-circle"></i>
+        <i class="icon" data-lucide="user-round"></i>
+
+    </div>
+
+    <!-- Loading the Lucide icons library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</div>
+
+<!--Script for the click on the triangles of the map (Claude help-->
+<script src="script.js"></script>
+
+</body>
+</html>
